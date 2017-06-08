@@ -1,0 +1,16 @@
+{{> head }}
+	<div class="row">
+		<div class="large-12 columns">
+			<h3>Story comment history</h3>
+			<div id="history-list">
+			</div>
+		</div>
+	</div>
+
+	{{> includes }}
+	<script src="/js/comment_history.js"></script>
+	<script>
+		initial_update({{story}}, {{comment}});
+	</script>
+{{> tail }}
+

@@ -1,0 +1,16 @@
+{{> head }}
+	<div class="row">
+		<div class="large-12 columns">
+			<h3 id="bin-num"></h3>
+			<p><div id="pov-info"></div></p>
+			<h3>Binaries</h3>
+				<div id="bin-list"></div>
+		</div>
+	</div>
+
+	{{> includes }}
+	<script src="/js/pov.js"></script>
+	<script>
+		initial_update({{povid}});
+	</script>
+{{> tail }}

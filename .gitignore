@@ -1,0 +1,3 @@
+master/store/*
+master/traceapi.sql.gz
+!master/store/*.gz

@@ -1,0 +1,20 @@
+{ "name" : "trace-api"
+, "version" : "1.0.0"
+, "description" : "Backend analysis based on a forked qemu for generating instrumented executions of Cyber Grand Challenge DECREE binaries. Most useful for providing trace files to https://github.com/voidALPHA/cgc_viz"
+, "main" : "master.js"
+, "license": "MIT"
+, "author": "Jordan Wiens <jordan@vector35.com>"
+, "repository" :
+  { "type" : "git"
+  , "url" : "https://github.com/Vector35/trace-api.git"
+  }
+, "dependencies" :
+  { "express" : "=4.13.4"
+  , "express-redirect" : "=1.2.2"
+  , "morgan" : "=1.7.0"
+  , "pg" : "=4.5.1"
+  , "body-parser" : "=1.15.0"
+  , "handlebars" : "=4.0.5"
+  , "marked" : "0.3.5"
+  }
+}

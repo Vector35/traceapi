@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>CGC Visualization Status</title>
+		<link rel="stylesheet" href="/css/foundation.css" />
+		<link rel="stylesheet" href="/css/app.css" />
+		<script>
+				slash = document.location.pathname.substr(1).indexOf("/");
+				if (slash > 12) {
+					key = document.location.pathname.substr(0,slash + 2);
+				} else {
+					key = "/";
+				}
+		</script>
+	</head>
+	<body>
+		<div class="top-bar">
+			<div class="top-bar-left">
+				<ul class="menu">
+					<li class="menu-text">CGC Visualization Status</li>
+					<li id="login"></li>
+				</ul>
+			</div>
+			<div class="top-bar-right">
+				<ul class="menu">
+					<li class="active" id="statuslink"><script>document.write('<a href="' + key + 'ui/status">Status</a>');</script></li>
+					<li id="roundlink"><script>document.write('<a href="' + key + 'ui/round">Rounds</a>');</script></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="reveal" id="login-page" data-reveal>
+			User: <input type="text" id="login-name"></input>
+			<a class="small button" data-close href="javascript:accept_login()">Accept</a>
+			<button class="close-button" data-close aria-label="Close" type="button">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+

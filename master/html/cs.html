@@ -1,0 +1,18 @@
+{{> head }}
+	<div class="row">
+		<div class="large-12 columns">
+			<h3 id="cs-name"></h3>
+			<p><div id="cs-info"></div></p>
+			<h3>Scores</h3>
+				<div id="cs-score"></div>
+			<hr/>
+			<div id="cs-readme"></div>
+		</div>
+	</div>
+
+	{{> includes }}
+	<script src="/js/cs.js"></script>
+	<script>
+		initial_update({{csid}});
+	</script>
+{{> tail }}

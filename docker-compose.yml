@@ -1,0 +1,41 @@
+version: '2.1'
+services: 
+  db:
+    image: postgres
+    volumes:
+      - ./master/traceapi.sql.gz:/docker-entrypoint-initdb.d/traceapi.sql.gz
+      - data:/var/lib/postgresql
+    environment:
+      - POSTGRES_PASSWORD=trace
+      - POSTGRES_USER=trace
+      - POSTGRES_DB=trace
+  traceapi:
+    build: ./master
+    links:
+      - db
+    environment:
+      - PGHOST=db
+      - PGDATABASE=trace
+      - PGUSER=trace
+      - PGPASSWORD=trace
+    ports:
+      - 8000:8000
+    command: "/usr/src/app/wait-for-db.sh"
+    healthcheck:
+        test: ["CMD", "curl", "-f", "http://localhost:8000/ui/status"]
+        interval: 10s
+        timeout: 5s
+        retries: 25
+  worker:
+    build: ./client
+    links:
+      - traceapi
+    depends_on:
+      traceapi:
+        condition: service_healthy
+    environment:
+      - TRACE=traceapi
+
+volumes:
+  data:
+

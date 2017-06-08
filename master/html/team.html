@@ -1,0 +1,98 @@
+{{> head }}
+	<div class="row">
+		<div class="large-12 columns">
+			<h3 id="team-name"></h3>
+			<p><div id="team-info"></div></p>
+			<h3>Scores by round</h3>
+			<ul class="tabs" data-tabs id="round-score-tabs">
+				<li class="tabs-title is-active"><a href="#round-score-relative"><div id="round-score-relative-name">Relative</div></a></li>
+				<li class="tabs-title"><a href="#round-score-total">Total score</a></li>
+			</ul>
+			<div class="tabs-content" data-tabs-content="round-score-tabs">
+				<div class="tabs-panel is-active" id="round-score-relative">
+					<table>
+						<tbody id="round-score-relative-list">
+						</tbody>
+					</table>
+				</div>
+				<div class="tabs-panel" id="round-score-total">
+					<table>
+						<tbody id="round-score-total-list">
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<h3>Scores by challenge</h3>
+			<div>Filter by tag: <select id="challenge-tags" onchange="filter_changed()"></select></div>
+			<ul class="tabs" data-tabs id="challenge-tabs">
+				<li class="tabs-title is-active"><a href="#by-challenge-summary">Summary</a></li>
+				<li class="tabs-title"><a href="#by-challenge-total">Total</a></li>
+				<li class="tabs-title"><a href="#by-challenge-func">Functionality</a></li>
+				<li class="tabs-title"><a href="#by-challenge-perf">Performance</a></li>
+				<li class="tabs-title"><a href="#by-challenge-security">Security</a></li>
+				<li class="tabs-title"><a href="#by-challenge-eval">Evaluation</a></li>
+				<li class="tabs-title"><a href="#by-challenge-uptime">Uptime</a></li>
+			</ul>
+			<div class="tabs-content" data-tabs-content="challenge-tabs">
+				<div class="tabs-panel is-active" id="by-challenge-summary">
+					<table>
+						<thead>
+							<td>Challenge</td>
+							<td>Total</td>
+							<td>Functionality</td>
+							<td>Performance</td>
+							<td>Security</td>
+							<td>Evaluation</td>
+							<td>Uptime</td>
+						</thead>
+						<tbody id="challenge-summary-list">
+						</tbody>
+					</table>
+				</div>
+				<div class="tabs-panel" id="by-challenge-total">
+					<table>
+						<thead id="challenge-total-header"></thead>
+						<tbody id="challenge-total-list"></tbody>
+					</table>
+				</div>
+				<div class="tabs-panel" id="by-challenge-func">
+					<table>
+						<thead id="challenge-func-header"></thead>
+						<tbody id="challenge-func-list"></tbody>
+					</table>
+				</div>
+				<div class="tabs-panel" id="by-challenge-perf">
+					<table>
+						<thead id="challenge-perf-header"></thead>
+						<tbody id="challenge-perf-list"></tbody>
+					</table>
+				</div>
+				<div class="tabs-panel" id="by-challenge-security">
+					<table>
+						<thead id="challenge-security-header"></thead>
+						<tbody id="challenge-security-list"></tbody>
+					</table>
+				</div>
+				<div class="tabs-panel" id="by-challenge-eval">
+					<table>
+						<thead id="challenge-eval-header"></thead>
+						<tbody id="challenge-eval-list"></tbody>
+					</table>
+				</div>
+				<div class="tabs-panel" id="by-challenge-uptime">
+					<table>
+						<thead id="challenge-uptime-header"></thead>
+						<tbody id="challenge-uptime-list"></tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	{{> includes }}
+	<script src="/js/score.js"></script>
+	<script src="/js/team.js"></script>
+	<script>
+		initial_update({{team}});
+	</script>
+{{> tail }}

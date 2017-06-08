@@ -1,0 +1,125 @@
+{{> head }}
+	<div class="reveal" id="upload-page" data-reveal>
+		File: <input type="file" id="upload"></input>
+		<button class="close-button" data-close aria-label="Close" type="button">
+			<span aria-hidden="true">&times;</span>
+		</button>
+	</div>
+
+	<div class="row">
+		<div class="large-9 columns">
+			<h3>Scores</h3>
+			<table>
+				<tbody id="score-list">
+				</tbody>
+			</table>
+		</div>
+		<div class="large-3 columns">
+			<h1 align="right" id="round-num">Loading</h1>
+			<p align="right">
+			Interactive queue: <font id="interactive-queue">Loading...</font><br/>
+			Priority queue: <font id="priority-queue">Loading...</font><br/>
+			Background queue: <font id="background-queue">Loading...</font><br/>
+			Pending work queue: <font id="pending-queue">Loading...</font><br/>
+			Waiting workers queue: <font id="waiting-queue">Loading...</font><br/>
+			</p>
+		</div>
+	</div>
+
+	<!--  //Disabling story interface
+	<div class="row">
+		<div class="large-12 columns">
+			<div id="filter">
+			</div>
+			<div id="story-state4">
+				<h3>Ready for production</h3>
+				<table>
+					<tbody id="story-list-state4">
+					</tbody>
+				</table>
+			</div>
+			<div id="story-state3">
+				<h3>Story finder review</h3>
+				<table>
+					<tbody id="story-list-state3">
+					</tbody>
+				</table>
+			</div>
+			<div id="story-state2">
+				<h3>Ready for visualization</h3>
+				<table>
+					<tbody id="story-list-state2">
+					</tbody>
+				</table>
+			</div>
+			<div id="story-state1">
+				<h3>Under investigation</h3>
+				<table>
+					<tbody id="story-list-state1">
+					</tbody>
+				</table>
+			</div>
+			<div id="story-state0">
+				<h3>Potential stories <small id="story-round"></small></h3>
+				<a class="small button" href="javascript:create_new_story()">Create story</a>
+				<div class="callout" id="new-story" style="display: none">
+					Title: <input type="text" id="new-story-title"></input>
+					Story Finder: <input type="text" id="new-story-owner"></input>
+					Visualizer: <input type="text" id="new-story-visualizer"></input>
+					<div class="row">
+						<div class="large-6 columns">
+							Description (<a href="markdown">Markdown</a>): <textarea id="new-story-contents" rows="10"></textarea>
+							<a class="tiny round button" href="javascript:insert_video(0)">Video</a>
+							<a class="tiny round button" data-open="upload-page" href="javascript:image_story=; $('#upload').val('');">Image</a>
+							<a class="tiny round button" href="javascript:bold_text(0)">Bold</a>
+							<a class="tiny round button" href="javascript:italics_text(0)">Italics</a>
+							<a class="tiny round button" href="javascript:heading_text(0)">Heading</a>
+						</div>
+						<div class="large-6 columns">
+							Preview: <div class="callout" id="new-story-preview"></div>
+						</div>
+					</div>
+					Priority: <select id="new-story-priority">
+						<option value="0">Critical</option>
+						<option value="1">High</option>
+						<option value="2" selected="selected">Medium</option>
+						<option value="3">Low</option>
+					</select>
+					<p align="right">
+						<a class="alert small button" href="javascript:cancel_new_story()">Cancel</a>
+						<a class="success small button" href="javascript:accept_new_story()">Create</a>
+					</p>
+				</div>
+				<table>
+					<tbody id="story-list-state0">
+					</tbody>
+				</table>
+			</div>
+			<div id="story-state5">
+				<h3>Archived stories <small id="archive-toggle"></small></h3>
+				<div id="archived-stories">
+					<table>
+						<tbody id="story-list-state5">
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="reveal" id="video-prompt" data-reveal>
+		Video ID: <input type="text" id="video-id"></input>
+		<a class="small button" data-close href="javascript:video_prompt())">Accept</a>
+		<button class="close-button" data-close aria-label="Close" type="button">
+			<span aria-hidden="true">&times;</span>
+		</button>
+	</div>
+	-->
+
+	{{> includes }}
+	<script src="/js/score.js"></script>
+	<script src="/js/status.js"></script>
+	<script src="/js/jarisflvplayer.js"></script>
+	<script>
+		set_filter("{{filter}}");
+	</script>
+{{> tail }}

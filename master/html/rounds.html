@@ -1,0 +1,36 @@
+{{> head }}
+	<div class="row">
+		<div class="large-3 columns rounds">
+			<h3>Rounds</h3>
+			<div id="round-list" class="button-group"></div>
+		</div>
+		<div class="large-9 columns">
+			<h3>Scores</h3>
+			<table>
+				<tbody id="score-list">
+				</tbody>
+			</table>
+			<h3>Score breakdown</h3>
+			<ul class="tabs" data-tabs id="challenge-tabs">
+				<li class="tabs-title is-active"><a href="#by-challenge">Challenges</a></li>
+				<li class="tabs-title"><a href="#by-team">Teams</a></li>
+			</ul>
+			<div class="tabs-content" data-tabs-content="challenge-tabs">
+				<div class="tabs-panel is-active" id="by-challenge">
+					<div id="challenge-list"></div>
+				</div>
+				<div class="tabs-panel" id="by-team">
+					<div id="team-list"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	{{> includes }}
+	<script src="/js/score.js"></script>
+	<script src="/js/rounds.js"></script>
+	<script>
+		initial_update({{round}});
+	</script>
+{{> tail }}
+

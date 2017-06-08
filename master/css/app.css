@@ -1,0 +1,17 @@
+.arrows {
+	padding-right: 30px;
+	font-weight: bold;
+}
+.progress {
+	margin-bottom: 0;
+}
+
+.rounds {
+	position: fixed;
+	top: 60px;
+	width: 17%;
+}
+
+.row {
+  max-width: 85rem;
+}

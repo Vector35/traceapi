@@ -1,0 +1,6 @@
+[submodule "client/qemu-decree"]
+	path = client/qemu-decree-fork
+	url = git@github.com:Vector35/qemu-decree
+[submodule "client/qemu-decree-fork"]
+	path = client/qemu-decree-fork
+	url = https://github.com/Vector35/qemu-decree

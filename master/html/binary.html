@@ -1,0 +1,20 @@
+{{> head }}
+	<div class="row">
+		<div class="large-12 columns">
+			<h3 id="bin-num"></h3>
+			<p><div id="bin-info"></div></p>
+			<h3>Scores</h3>
+				<div id="bin-score"></div>
+			<h3>PoVs</h3>
+				<div id="pov-list"></div>
+			<h3>Polls</h3>
+				<div id="poll-list"></div>
+		</div>
+	</div>
+
+	{{> includes }}
+	<script src="/js/binary.js"></script>
+	<script>
+		initial_update({{bsid}});
+	</script>
+{{> tail }}
